@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "bundlescroll",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Bundle Scroll",
+  "description": "Allows players to cycle inventory contents by using the scroll wheel on the inventory.",
   "authors": [
-    "Me!"
+    "Zachary Barbanell"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/bundlescroll/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "com.zacharybarbanell.bundlescroll.BundleScroll"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "bundlescroll.mixins.json"
   ],
 
   "depends": {
