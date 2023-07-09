@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.zacharybarbanell.bundlescroll.BundleScroll"
+    ],
+    "client": [
+      "com.zacharybarbanell.bundlescroll.BundleScrollClient"
     ]
   },
   "mixins": [
