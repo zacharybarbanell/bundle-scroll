@@ -4,13 +4,13 @@
   "version": "${version}",
 
   "name": "Bundle Scroll",
-  "description": "Allows players to cycle inventory contents by using the scroll wheel on the inventory.",
+  "description": "Allows players to cycle bundle inventory contents by using the scroll wheel in the inventory.",
   "authors": [
     "Zachary Barbanell"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/zacharybarbanell",
+    "sources": "https://github.com/zacharybarbanell/bundle-scroll"
   },
 
   "license": "MIT",
