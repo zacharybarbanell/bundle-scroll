@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenMouseEvents;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.item.BundleItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.slot.Slot;
@@ -32,7 +31,7 @@ public class BundleScrollClient implements ClientModInitializer {
 			return true;
 		}
 		ItemStack stack = slot.getStack();
-		if (!(stack.getItem() instanceof BundleItem)) {
+		if (!BundleScroll.isBundle(stack)) {
 			return true;
 		}
 		if (accScroll * scroll < 0) {

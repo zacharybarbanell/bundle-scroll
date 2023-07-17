@@ -1,0 +1,11 @@
+{
+    "values": [
+        {"required": false, "id": "tokenablefurnaces:iron_bundle_item"},
+        {"required": false, "id": "tokenablefurnaces:gold_bundle_item"},
+        {"required": false, "id": "tokenablefurnaces:diamond_bundle_item"},
+        {"required": false, "id": "tokenablefurnaces:netherite_bundle_item"},
+        {"required": false, "id": "tokenablefurnaces:amethyst_bundle_item"},
+        {"required": false, "id": "simple_backpack:simple_bundle"},
+        {"required": false, "id": "simple_backpack:void_bundle"}
+    ]
+}

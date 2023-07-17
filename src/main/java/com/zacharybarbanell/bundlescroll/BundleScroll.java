@@ -6,10 +6,13 @@ import org.slf4j.LoggerFactory;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.item.BundleItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.Identifier;
@@ -17,6 +20,7 @@ import net.minecraft.util.Identifier;
 public class BundleScroll implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("bundlescroll");
     public static final Identifier SCROLL_PACKET_ID = new Identifier("bundlescroll", "scrollbundle");
+    public static TagKey<Item> OVERRIDES = TagKey.of(RegistryKeys.ITEM, new Identifier("bundlescroll", "overrides"));
 
     @Override
     public void onInitialize() {
@@ -49,7 +53,7 @@ public class BundleScroll implements ModInitializer {
                 screenHandler.disableSyncing();
                 Slot slot = screenHandler.getSlot(i);
                 ItemStack stack = slot.getStack();
-                if ((stack.getItem() instanceof BundleItem)) {
+                if (isBundle(stack)) {
 			        shiftBundle(stack, amt);
 		        }
                 screenHandler.enableSyncing();
@@ -60,6 +64,10 @@ public class BundleScroll implements ModInitializer {
                 }
             });
         });
+    }
+
+    public static boolean isBundle(ItemStack stack) {
+        return (stack.getItem() instanceof BundleItem) || stack.isIn(OVERRIDES);
     }
 
     public static void shiftBundle(ItemStack bundle, int shift) {
