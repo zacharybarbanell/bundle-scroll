@@ -11,16 +11,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class BundleScroll implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("bundlescroll");
     public static final Identifier SCROLL_PACKET_ID = new Identifier("bundlescroll", "scrollbundle");
-    public static TagKey<Item> OVERRIDES = TagKey.of(RegistryKeys.ITEM, new Identifier("bundlescroll", "overrides"));
+    public static TagKey<Item> OVERRIDES = TagKey.of(Registry.ITEM_KEY, new Identifier("bundlescroll", "overrides"));
 
     @Override
     public void onInitialize() {
